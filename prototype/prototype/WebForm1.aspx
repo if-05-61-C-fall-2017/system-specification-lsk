@@ -21,6 +21,9 @@
             width: 565px;
             height: 23px;
         }
+        .auto-style5 {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -28,9 +31,12 @@
     <form id="form1" runat="server">
         <h1>Carfinder</h1>
         
-        <asp:MultiView ID="MultiView1" runat="server">
-            <asp:View ID="View1" runat="server">
-                <table style="width: 100%">
+        <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
+            <asp:View ID="StartView" runat="server">
+                <asp:Button ID="Start" runat="server" OnClick="Start_Click" Text="Find A Car!" />
+            </asp:View>
+            <asp:View ID="QuestionView_1" runat="server">
+                <table class="auto-style5">
                     <tr>
                         <td class="auto-style2">
                             <br />
@@ -48,22 +54,57 @@
                         <td class="auto-style4">Wie wichtig ist Ihnen dieses Attribut?</td>
                     </tr>
                     <tr>
-                        <td class="auto-style2">
+                        <td class="auto-style3">
                             <asp:Button ID="Importancy1" runat="server" OnClick="Importancy_Click" Text="1" />
                         </td>
-                        <td>
+                        <td class="auto-style1">
                             <asp:Button ID="Importancy10" runat="server" OnClick="Importancy_Click" Text="10" />
                         </td>
                     </tr>
                     <tr>
                         <td class="auto-style2">
-                            <asp:Button ID="submit" runat="server" OnClick="submit_Click" Text="Submit" />
-                            <asp:Button runat="server" OnClick="GetData_Click" Text="Try" />
+                            <asp:Button ID="next" runat="server" OnClick="next_Click" Text="Next" />
                         </td>
                     </tr>
                 </table>
             </asp:View>
-            <asp:View ID="View2" runat="server">
+            <asp:View ID="QuestionView_2" runat="server">
+                 <table class="auto-style5">
+                    <tr>
+                        <td class="auto-style2">
+                            <br />
+                            Wie viel PS muss das Auto haben?</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style3">
+                            <asp:Button ID="Button1" runat="server" OnClick="AnswerButton_Click" Text="350" />
+                        </td>
+                        <td class="auto-style1">
+                            <asp:Button ID="Button2" runat="server" OnClick="AnswerButton_Click" Text="550" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style4">Wie wichtig ist Ihnen dieses Attribut?</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style3">
+                            <asp:Button ID="Button3" runat="server" OnClick="Importancy_Click" Text="1" />
+                        </td>
+                        <td class="auto-style1">
+                            <asp:Button ID="Button4" runat="server" OnClick="Importancy_Click" Text="10" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <asp:Button ID="Button5" runat="server" OnClick="next_Click" Text="Next" />
+                        </td>
+                    </tr>
+                </table>
+            </asp:View>
+            <asp:View ID="FinishView" runat="server">
+                <asp:Button runat="server" OnClick="GetData_Click" Text="Show me the result!" />
+            </asp:View>
+            <asp:View ID="ResultView" runat="server">
                 <div id="Div" runat="server" visible="false">
                     <asp:Table runat="server">
                         <asp:TableRow>

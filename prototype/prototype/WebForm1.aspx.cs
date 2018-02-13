@@ -20,7 +20,7 @@ namespace prototype
         private static Car _fittingCar;
         protected void Page_Load(object sender, EventArgs e)
         {
-            MultiView1.ActiveViewIndex = 0;
+
         }
 
         protected void GetData_Click(object sender, EventArgs e)
@@ -55,10 +55,25 @@ namespace prototype
         }
         private double CheckCar(Car car)
         {
-            if (car.Name.Contains(answers[1].AnswerString))
-                return 10 * answers[1].Importancy;
-            else
-                return 0;
+            double rating = 0;
+            for(int i = 0;i<2 /*Number of Answers*/;i++)
+            {
+                switch(i)
+                {
+                    case 0:
+                        if (car.Name.Contains(answers[i+1].AnswerString))
+                            rating = 10 * answers[i+1].Importancy;
+                        else
+                            rating = 0;
+                        break;
+                    case 1:
+                        if (car.HorsePower >= Int32.Parse(answers[i + 1].AnswerString))
+                            rating += 10 * answers[i + 1].Importancy;
+                        break;
+                }
+                
+            }
+            return rating;
         }
         private void ReadAllCarsFromDB()
         {
@@ -89,7 +104,7 @@ namespace prototype
             tempImportancy = Int32.Parse(btn.Text);
         }
 
-        protected void submit_Click(object sender, EventArgs e)
+        protected void next_Click(object sender, EventArgs e)
         {
             if (tempAnswer == null || tempImportancy == 0)
             {
@@ -97,13 +112,19 @@ namespace prototype
             }
             else
             {
-                if (answers.ContainsKey(1))
-                    answers.Remove(1);
-                answers.Add(1, new Answer(tempAnswer, tempImportancy));
+                if (answers.ContainsKey(MultiView1.ActiveViewIndex))
+                    answers.Remove(MultiView1.ActiveViewIndex);
+                answers.Add(MultiView1.ActiveViewIndex, new Answer(tempAnswer, tempImportancy));
             }
             tempAnswer = null;
             tempImportancy = 0;
+            MultiView1.ActiveViewIndex++;
         }
 
+        protected void Start_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex++;
+        }
+        
     }
 }
