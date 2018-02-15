@@ -77,7 +77,7 @@ namespace prototype
         }
         private void ReadAllCarsFromDB()
         {
-            string connectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = C:\\Users\\LK\\Desktop\\prototype\\prototype\\App_Data\\Database1.mdf; Integrated Security = True";
+            string connectionString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = C:\\Users\\leons\\Documents\\Git\\system-specification-lsk\\prototype\\prototype\\App_Data\\Database1.mdf; Integrated Security = True";
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             string query = "SELECT * FROM \"Table\"";
@@ -125,6 +125,259 @@ namespace prototype
         {
             MultiView1.ActiveViewIndex++;
         }
+
+
+
+
+
+
+        // NEW DESIGN; LAYOUT AND STUFF
+        int maxBudget;
+        HashSet<string> prefCarType;
+
+        protected void AnswerButtons(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            switch (MultiView1.ActiveViewIndex)
+            {
+                case 1:
+                    if(btn.Text == "0 - 10000")
+                    {
+                        maxBudget = 10000;
+                    } else if(btn.Text == "10000-50000")
+                    {
+                        maxBudget = 50000;
+                    }
+                    else if (btn.Text == "50000-100000")
+                    {
+                        maxBudget = 100000;
+                    }
+
+                    else if (btn.Text == "100000-200000")
+                    {
+                        maxBudget = 200000;
+                    }
+                    else if (btn.Text == "200000<")
+                    {
+                        maxBudget = int.MaxValue;
+                    }
+                    break;
+                case 2:
+                    if(prefCarType == null)
+                    {
+                        prefCarType = new HashSet<string>();
+                    }
+                    prefCarType.Add(btn.Text);
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+                case 6:
+
+                    break;
+                case 7:
+
+                    break;
+                case 8:
+
+                    break;
+                case 9:
+
+                    break;
+                case 10:
+
+                    break;
+                case 11:
+
+                    break;
+                case 12:
+
+                    break;
+            }
+        }
+
         
+
+        protected void PriceRangeAnswerButtons(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void PriceRangeImportanceButtons(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        protected void CarTypeAnswerButtons(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void CarTypeImportanceButtons(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        protected void PreferredCarMakesAnswerButtons(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void PreferredCarMakesImportanceButtons(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        protected void DislikedCarMakesAnswerButtons(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void DislikedCarMakesImportanceButtons(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        protected void CarSizeAnswerButtons(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void CarSizeImportanceButtons(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        protected void ElectricCarAnswerButtons(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ElectricCarImportanceButtons(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        protected void RegularlyTransportedPeopleAnswerButtons(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void RegularlyTransportedPeopleImportanceButtons(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        protected void PreferredFuelTypeAnswerButtons(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void PreferredFuelTypeImportanceButtons(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        protected void FuelConsumptionAnswerButtons(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void FuelConsumptionImportanceButtons(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        protected void RaceTrackUsageAnswerButtons(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void RaceTrackUsageImportanceButtons(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        protected void DrivestyleAnswerButtons(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void DrivestyleImportanceButtons(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        protected void AccelerationAnswerButtons(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void AccelerationImportanceButtons(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
