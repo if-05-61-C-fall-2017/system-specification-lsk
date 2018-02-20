@@ -1,0 +1,18 @@
+grobe zusammenfassung der zu behandelnden themen für die nächsten 3 wochen (stand: 20.2.2018)
+
+
+-responsive design
+-auslagerung des projektes (auf somee.com)
+-car-finding-algorithmus (möglicherweise mit hilfe von delegates)
+-datenbank design
+-sessions statt static variablen
+-endgültiges set von fragen
+-speicherung der antworten
+-erstellung eines impressums
+-erstellung einer "about us"-seite inklusive beschreibung der 
+ philosophie unserer seite(kein ausschlussverfahren, kein gebrauchtwagenhändler)
+-fehlerbehandlung (error-seite einrichten)
+-befüllung der datenbank mit sorgfältig recherchierten daten
+
+-> zusammenführung der prototypen
+--> erstellung des "richtigen" projekts
