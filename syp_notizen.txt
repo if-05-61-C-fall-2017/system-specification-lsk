@@ -13,6 +13,7 @@ grobe zusammenfassung der zu behandelnden themen für die nächsten 3 wochen (stan
  philosophie unserer seite(kein ausschlussverfahren, kein gebrauchtwagenhändler)
 -fehlerbehandlung (error-seite einrichten)
 -befüllung der datenbank mit sorgfältig recherchierten daten
+-immer status der website speichern (viewstate; -> funktioniert mit updatepanel nicht so leicht)
 
 -> zusammenführung der prototypen
 --> erstellung des "richtigen" projekts
